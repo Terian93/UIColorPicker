@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { hot } from 'react-hot-loader';
-import HelloWorld from './components/hello-world';
 
-class App extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {};
-  }
+//import SideMenu from './components/sideMenu';
+import PageMock from './components/PageMock';
+import SideMenuContainer from './container/SideMenuContainer';
 
-  render () {
-    return <HelloWorld title="Hello from React webpack" />;
-  }
-}
+const App = () => (
+  <div className="container">
+    <SideMenuContainer />
+    <PageMock />
+  </div>
+);
 
 export default hot(module)(App);
