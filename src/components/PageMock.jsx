@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/pageMock.scss';
+import '../styles/PageMock.scss';
 
 const PageMock = () => (
   <section className="page-mock">Page Mock Works!</section>

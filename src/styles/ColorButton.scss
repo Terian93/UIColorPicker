@@ -1,0 +1,17 @@
+.side-menu {
+  &__color-button {
+    position: relative;
+    height: 50px;
+    width: 50px;
+
+    &.primary {
+      top: 0;
+      left: 0;
+    }
+
+    &.primary.active {
+      top: -15px;
+      left: -15px;
+    }
+  }
+}
