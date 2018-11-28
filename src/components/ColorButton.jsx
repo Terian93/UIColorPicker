@@ -8,10 +8,13 @@ const ColorButton = ({ blockName, color, activeColorName, action }) => {
     event.preventDefault();
     action(blockName);
   };
+  const colorStyle = {
+    background: color
+  };
   return (
     <div
       className={'side-menu__color-button ' + blockName + modifier}
-      style={{ background: color }}
+      style={colorStyle}
       onClick={clickFunction}
     />
   );

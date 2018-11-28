@@ -3,15 +3,66 @@
     position: relative;
     height: 50px;
     width: 50px;
+    border: 0.5px solid transparent;
 
     &.primary {
       top: 0;
       left: 0;
+      border-top: 0.5px solid black;
+      border-left: 0.5px solid black;
+      border-radius: 15px 0 0 0;
+      transition: border .3s ease, top .3s ease, left .3s ease;
     }
 
     &.primary.active {
-      top: -15px;
-      left: -15px;
+      top: -5px;
+      left: -5px;
+      border: 0.5px solid black;
+    }
+
+    &.secondary {
+      top: 0;
+      right: 0;
+      border-top: 0.5px solid black;
+      border-right: 0.5px solid black;
+      border-radius: 0 15px 0 0;
+      transition: border .3s ease, top .3s ease, right .3s ease;
+    }
+
+    &.secondary.active {
+      top: -5px;
+      right: -5px;
+      border: 0.5px solid black;
+    }
+
+    &.mainbg {
+      left: 0;
+      bottom: 0;
+      border-bottom: 0.5px solid black;
+      border-left: 0.5px solid black;
+      border-radius: 0 0 0 15px;
+      transition: border .3s ease, bottom .3s ease, left .3s ease;
+    }
+
+    &.mainbg.active {
+      bottom: -5px;
+      left: -5px;
+      border: 0.5px solid black;
+    }
+
+    &.aditionalbg {
+      bottom: 0;
+      right: 0;
+      border-right: 0.5px solid black;
+      border-bottom: 0.5px solid black;
+      border-radius: 0 0 15px 0;
+      transition: border .3s ease, bottom .3s ease, right .3s ease;
+    }
+
+    &.aditionalbg.active {
+      bottom: -5px;
+      right: -5px;
+      border: 0.5px solid black;
     }
   }
 }

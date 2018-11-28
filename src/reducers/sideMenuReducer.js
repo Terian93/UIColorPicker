@@ -2,10 +2,10 @@ const sideMenuReducer = (
   state = {
     sideBarOpened: true,
     colors: {
-      primary: '#000',
-      secondary: '#000',
-      mainBG: '#000',
-      aditionalBG: '#000'
+      primary: '#FFF',
+      secondary: '#F00',
+      mainbg: '#0F0',
+      aditionalbg: '#00F'
     },
     activeColor: 'secondary'
   },
@@ -30,7 +30,8 @@ const sideMenuReducer = (
     case 'CHANGE_ACTIVE_COLOR':
       return {
         ...state,
-        activeColor: action.colorName
+        activeColor:
+          action.colorName === state.activeColor ? 'none' : action.colorName
       };
     default:
       return state;
