@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeActiveColor } from '../actions';
-import ColorButton from '../components/ColorButton';
+import ColorButton from '../components/ColorButton/';
 
 const ColorButtons = ({ colors, activeColorName, changeActiveColor }) => {
   return (

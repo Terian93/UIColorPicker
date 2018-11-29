@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { toggleSideBar } from '../actions';
-import ColorButtons from '../container/ColorButtons';
-import '../styles/SideMenu.scss';
+import { toggleSideBar } from '../../actions';
+import ColorButtons from '../../containers/ColorButtons';
+import './style.scss';
 
 class SideMenu extends Component {
   constructor (props) {
@@ -18,6 +18,9 @@ class SideMenu extends Component {
       <section className={containerClassName}>
         <div className="side-menu__container">
           <h2 className="side-menu__title">UI Color Picker</h2>
+          <div className="side-menu__menu-controls-hint">
+            swipe left to show mock
+          </div>
           <ColorButtons />
         </div>
         <div

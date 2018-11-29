@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/ColorButton.scss';
+import './style.scss';
+//import getButtonStyle from './getButtonStyle';
 
 const ColorButton = ({ blockName, color, activeColorName, action }) => {
   const modifier = activeColorName === blockName ? ' active' : '';
@@ -8,6 +9,7 @@ const ColorButton = ({ blockName, color, activeColorName, action }) => {
     event.preventDefault();
     action(blockName);
   };
+  //const colorStyle = getButtonStyle(blockName, activeColorName, color);
   const colorStyle = {
     background: color
   };

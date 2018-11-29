@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SideMenu from '../components/SideMenu';
+import SideMenu from '../components/SideMenu/';
 import { toggleSideBar, changeColor } from '../actions';
 
 const mapStateToProps = state => ({

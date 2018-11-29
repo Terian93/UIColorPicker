@@ -2,12 +2,12 @@ const sideMenuReducer = (
   state = {
     sideBarOpened: true,
     colors: {
-      primary: '#FFF',
-      secondary: '#F00',
-      mainbg: '#0F0',
-      aditionalbg: '#00F'
+      primary: '#03A9F4',
+      secondary: '#2196F3',
+      mainbg: '#FFF',
+      aditionalbg: '#AAA'
     },
-    activeColor: 'secondary'
+    activeColor: 'none'
   },
   action
 ) => {
