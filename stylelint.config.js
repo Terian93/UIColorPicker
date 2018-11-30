@@ -12,7 +12,13 @@ module.exports = {
     ],
     'selector-max-id': 0,
     'selector-class-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9_]+)*$',
-    'at-rule-no-unknown': null,
-    'scss/at-rule-no-unknown': true
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['function', 'if', 'each', 'include', 'mixin']
+      }
+    ],
+    'scss/at-rule-no-unknown': true,
+    'declaration-block-trailing-semicolon': null
   }
 };

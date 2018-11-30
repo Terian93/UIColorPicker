@@ -2,10 +2,14 @@ const sideMenuReducer = (
   state = {
     sideBarOpened: true,
     colors: {
-      primary: '#03A9F4',
-      secondary: '#2196F3',
-      mainbg: '#FFF',
-      aditionalbg: '#AAA'
+      primary: '#03a9f4',
+      primaryFont: 'white',
+      secondary: '#2196f3',
+      secondaryFont: 'white',
+      mainbg: '#ffffff',
+      mainbgFont: 'black',
+      aditionalbg: '#aaaaaa',
+      aditionalbgFont: 'black'
     },
     activeColor: 'none'
   },
@@ -25,7 +29,11 @@ const sideMenuReducer = (
     case 'CHANGE_COLOR':
       return {
         ...state,
-        colors: { ...state.colors, [state.activeColor]: action.color }
+        colors: {
+          ...state.colors,
+          [state.activeColor]: action.color,
+          [state.activeColor + 'Font']: getFontColor(action.color)
+        }
       };
     case 'CHANGE_ACTIVE_COLOR':
       return {
@@ -36,6 +44,16 @@ const sideMenuReducer = (
     default:
       return state;
   }
+};
+
+const getFontColor = (bgColor, x = 173) => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(bgColor);
+  const r = parseInt(result[1], 16);
+  const g = parseInt(result[2], 16);
+  const b = parseInt(result[3], 16);
+
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness > x ? 'white' : 'black';
 };
 
 export default sideMenuReducer;

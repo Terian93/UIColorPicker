@@ -52,7 +52,10 @@ class PageMock extends Component {
     return (
       <section className={'page-mock' + ' ' + this.state.activeTemplate}>
         <header
-          style={{ backgroundColor: this.props.colors.primary }}
+          style={{
+            backgroundColor: this.props.colors.primary,
+            color: this.props.colors.primaryFont
+          }}
           className="page-mock__header"
           onClick={this.toogleSideBar}
         >
@@ -63,7 +66,10 @@ class PageMock extends Component {
         </header>
         <main className="page-mock__main">
           <nav
-            style={{ backgroundColor: this.props.colors.aditionalbg }}
+            style={{
+              backgroundColor: this.props.colors.aditionalbg,
+              color: this.props.colors.secondaryFont
+            }}
             className={'side-bar' + this.state.sidebarClass}
           >
             <div
@@ -89,7 +95,10 @@ class PageMock extends Component {
             </div>
           </nav>
           <div
-            style={{ backgroundColor: this.props.colors.mainbg }}
+            style={{
+              backgroundColor: this.props.colors.mainbg,
+              color: this.props.colors.secondaryFont
+            }}
             className="main-space"
           >
             <div
