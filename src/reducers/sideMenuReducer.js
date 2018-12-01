@@ -1,20 +1,19 @@
-const sideMenuReducer = (
-  state = {
-    sideBarOpened: true,
-    colors: {
-      primary: '#03a9f4',
-      primaryFont: 'white',
-      secondary: '#2196f3',
-      secondaryFont: 'white',
-      mainbg: '#ffffff',
-      mainbgFont: 'black',
-      aditionalbg: '#aaaaaa',
-      aditionalbgFont: 'black'
-    },
-    activeColor: 'none'
+const defaultState = {
+  sideBarOpened: true,
+  colors: {
+    primary: '#03a9f4',
+    primaryFont: 'white',
+    secondary: '#2196f3',
+    secondaryFont: 'white',
+    mainbg: '#ffffff',
+    mainbgFont: 'black',
+    aditionalbg: '#aaaaaa',
+    aditionalbgFont: 'black'
   },
-  action
-) => {
+  activeColor: 'secondary'
+};
+
+const sideMenuReducer = (state = defaultState, action) => {
   switch (action.type) {
     case 'TOOGLE_SIDEBAR':
       return {
