@@ -1,32 +1,6 @@
 .color-input {
   display: block;
 
-  &__copy-header {
-    text-align: center;
-    margin: 15px 0 5px;
-  }
-
-  &__copy-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    &__hex-btn,
-    &__hsl-btn {
-      padding: 5px;
-      border: 1px solid gray;
-      border-radius: 15px;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    &__hex-btn:hover,
-    &__hsl-btn:hover {
-      cursor: pointer;
-      border-color: #03a9f4;
-    }
-  }
-
   &__input-header {
     margin: 15px 0 5px;
     text-align: center;
@@ -102,26 +76,6 @@
   .color-input {
     width: 100%;
 
-    &__copy-header {
-      position: absolute;
-      top: 32px;
-      left: calc(50% - 100px);
-      width: 200px;
-      margin: 0;
-      color: gray;
-    }
-
-    &__copy-buttons {
-      position: absolute;
-      top: 52px;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 80px;
-      width: 50px;
-      margin: 30px 30px 0;
-      text-align: center
-    }
-
     &__input-header {
       display: none;
     }
@@ -129,40 +83,6 @@
     &__input-box {
       * {
         display: none;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 824px) and (max-height: 420px) {
-  .color-input {
-    display: flex;
-    flex-direction: row;
-    width: 50vw;
-    position: absolute;
-    top: 40px;
-    left: 135px;
-
-    &__copy-header {
-      position: relative;
-      left: 0;
-      top: 0;
-      margin: 0 10px 0 0;
-      text-align: left;
-      line-height: 30px;
-    }
-
-    &__copy-buttons {
-      position: relative;
-      top: 0;
-      flex-direction: row;
-      height: 30px;
-      width: 100px;
-      margin: 0;
-      text-align: center;
-
-      &__hsl-btn {
-        margin-left: 5px;
       }
     }
   }

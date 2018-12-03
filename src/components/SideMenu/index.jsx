@@ -6,6 +6,7 @@ import ColorButtons from '../../containers/ColorButtons';
 import './style.scss';
 import ColorPicker from '../ColorPicker';
 import ColorInput from '../ColorInput';
+import CopyButtons from '../CopyButtons';
 
 class SideMenu extends Component {
   constructor (props) {
@@ -44,6 +45,7 @@ class SideMenu extends Component {
             color={this.props.color}
             handleColorChange={this.props.handleColorChange}
           />
+          <CopyButtons />
         </div>
         <div
           className="side-menu__hide-btn"

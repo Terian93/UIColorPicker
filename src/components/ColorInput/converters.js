@@ -75,3 +75,12 @@ export const hslToRgb = ({ h, s, l }) => {
   }
   return hex;
 };
+
+export const shortHexToLong = shortHex =>
+  shortHex[0] +
+  shortHex[1] +
+  shortHex[1] +
+  shortHex[2] +
+  shortHex[2] +
+  shortHex[3] +
+  shortHex[3];
