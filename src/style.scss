@@ -9,6 +9,22 @@ body {
   overflow: hidden;
 }
 
+input {
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  background: white no-repeat;
+  background-image: linear-gradient(to bottom, #03a9f4, #03a9f4), linear-gradient(to bottom, silver, silver);
+  background-size: 0% 2px, 60% 1px;
+  background-position: 100% 100%, 100% 100%;
+  transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  background-size: 60% 2px, 60% 1px;
+}
+
 .app,
 .container {
   display: flex;
@@ -17,4 +33,16 @@ body {
   min-height: 100%;
   min-width: 100%;
   position: relative;
+}
+
+@media screen and (max-width: 824px) and (max-height: 824px) {
+  input {
+    background-size: 0% 2px, 100% 1px;
+    background-position: 50% 100%, 100% 100%;
+    transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  }
+
+  input:focus {
+    background-size: 100% 2px, 100% 1px;
+  }
 }

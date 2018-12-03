@@ -10,7 +10,7 @@ const defaultState = {
     aditionalbg: '#aaaaaa',
     aditionalbgFont: 'black'
   },
-  activeColor: 'secondary'
+  activeColor: 'none'
 };
 
 const sideMenuReducer = (state = defaultState, action) => {
@@ -45,14 +45,14 @@ const sideMenuReducer = (state = defaultState, action) => {
   }
 };
 
-const getFontColor = (bgColor, x = 173) => {
+const getFontColor = (bgColor, x = 133) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(bgColor);
   const r = parseInt(result[1], 16);
   const g = parseInt(result[2], 16);
   const b = parseInt(result[3], 16);
 
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  return brightness > x ? 'white' : 'black';
+  return brightness > x ? 'black' : 'white';
 };
 
 export default sideMenuReducer;

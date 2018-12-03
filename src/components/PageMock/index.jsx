@@ -57,12 +57,10 @@ class PageMock extends Component {
             color: this.props.colors.primaryFont
           }}
           className="page-mock__header"
-          onClick={this.toogleSideBar}
         >
-          <h4 className="page-mock__title">App title</h4>
-          <span className="page-mock__menu-controls-hint">
-            swipe right to open menu
-          </span>
+          <h4 className="page-mock__title" onClick={this.toogleSideBar}>
+            App title
+          </h4>
         </header>
         <main className="page-mock__main">
           <nav

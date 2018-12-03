@@ -11,7 +11,6 @@
       flex: 0 0 300px;
       margin-left: 0;
       transition: margin-left .3s ease;
-      overflow: hidden;
 
       &.close {
         margin-left: -300px;
@@ -24,6 +23,7 @@
         border-radius: 25px;
         text-align: center;
         line-height: 50px;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover {
           cursor: pointer;
@@ -38,7 +38,7 @@
     .main-space {
       position: relative;
       z-index: 1;
-      height: calc(100vh - 70px);
+      height: 100%;
       flex-grow: 1;
       background-color: grey;
       overflow: auto;

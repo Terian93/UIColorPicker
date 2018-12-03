@@ -1,4 +1,5 @@
 .color-picker {
+  display: block;
   margin: 15px auto;
   width: fit-content;
 
@@ -6,16 +7,36 @@
     position: relative;
     height: 200px;
     width: 200px;
+    touch-action: manipulation;
   }
 
   &__hue {
     position: relative;
-    height: 10px;
+    height: 15px;
     width: 200px;
-    padding: 0 1px;
-    border-radius: 5px;
+    padding: 0;
+    border-radius: 7.5px;
     margin: 10px 0 0;
     overflow: hidden;
+    background-color: red;
+    touch-action: manipulation;
+
+    .hue-horizontal {
+      margin: 0 7.5px !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  &__hue-pointer {
+    position: absolute;
+    top: 10px;
+    transform: translate(-50%, -10px);
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 7.5px;
   }
 }
 
@@ -25,6 +46,7 @@
       position: relative;
       height: 50vh;
       width: auto;
+      margin: 0 10px;
     }
 
     &__hue {
@@ -33,6 +55,16 @@
       width: calc(100vw - 20px);
       border-radius: 15px;
       margin: 10px 10px 0;
+
+      .hue-horizontal {
+        margin: 0 15px !important;
+      }
+    }
+
+    &__hue-pointer {
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
     }
   }
 }
@@ -41,10 +73,10 @@
   .color-picker {
     position: relative;
     display: inline-block;
-    top: -70px;
-    height: 60vh;
+    top: -40px;
+    height: calc(100vh - 186px);
     width: calc(100vw - 20px);
-    margin: 0 10px;
+    margin: 0;
 
     &__saturation {
       position: relative;
@@ -55,8 +87,8 @@
     &__hue {
       position: relative;
       z-index: 4;
-      top: calc(-60vh - 40px);
-      left: 110px;
+      top: calc(-100vh + 145px);
+      left: 120px;
       width: calc(100% - 110px);
       margin: 0;
     }

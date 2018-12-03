@@ -13,7 +13,7 @@
     .main-space {
       position: relative;
       z-index: 1;
-      height: calc(100vh - 70px);
+      height: 100%;
       width: 100%;
       overflow: auto;
 
@@ -39,6 +39,7 @@
         margin-top: 120px;
         border-radius: 0 30px 0 0;
         line-height: 30px;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover {
           cursor: pointer;

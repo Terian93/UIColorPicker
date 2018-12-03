@@ -47,7 +47,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeActiveColor: colorName => dispatch(changeActiveColor(colorName))
+  changeActiveColor: colorName => {
+    dispatch(changeActiveColor(colorName));
+  }
 });
 
 export default connect(
