@@ -9,25 +9,25 @@ const ColorButtons = ({ colors, activeColorName, changeActiveColor }) => {
     <div className="side-menu__colors-container">
       <ColorButton
         blockName="primary"
-        color={colors['primary']}
+        color={colors['primary']['hex']}
         activeColorName={activeColorName}
         action={changeActiveColor}
       />
       <ColorButton
         blockName="secondary"
-        color={colors['secondary']}
+        color={colors['secondary']['hex']}
         activeColorName={activeColorName}
         action={changeActiveColor}
       />
       <ColorButton
         blockName="mainbg"
-        color={colors['mainbg']}
+        color={colors['mainbg']['hex']}
         activeColorName={activeColorName}
         action={changeActiveColor}
       />
       <ColorButton
         blockName="aditionalbg"
-        color={colors['aditionalbg']}
+        color={colors['aditionalbg']['hex']}
         activeColorName={activeColorName}
         action={changeActiveColor}
       />

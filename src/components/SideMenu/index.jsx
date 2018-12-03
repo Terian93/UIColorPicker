@@ -10,11 +10,20 @@ import ColorInput from '../ColorInput';
 class SideMenu extends Component {
   constructor (props) {
     super(props);
+    this.handleColorPickerChange = this.handleColorPickerChange.bind(this);
   }
 
-  handleInputChange (hex) {
-    if (/^#?(#{1})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/.test(hex)) {
-      this.props.handleColorChange(hex);
+  handleColorPickerChange (color) {
+    if (this.props.activeColor !== 'none') {
+      const result = {
+        hex: color.hex,
+        hsl: {
+          h: Math.round(color.hsl.h),
+          s: Math.round(color.hsl.s * 100),
+          l: Math.round(color.hsl.l * 100)
+        }
+      };
+      this.props.handleColorChange(result);
     }
   }
 
@@ -28,8 +37,8 @@ class SideMenu extends Component {
           <h2 className="side-menu__title">UI Color Picker</h2>
           <ColorButtons />
           <ColorPicker
-            color={this.props.color}
-            onChange={this.props.handleColorChange}
+            color={this.props.color.hex}
+            onChange={this.handleColorPickerChange}
           />
           <ColorInput
             color={this.props.color}
@@ -50,7 +59,8 @@ class SideMenu extends Component {
 
 SideMenu.propTypes = {
   sideBarOpened: PropTypes.bool.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.object.isRequired,
+  activeColor: PropTypes.string.isRequired,
   toggleSideBar: PropTypes.func.isRequired,
   handleColorChange: PropTypes.func.isRequired
 };
@@ -60,13 +70,14 @@ const mapStateToProps = state => ({
   color:
     state.sideMenuReducer.activeColor !== 'none'
       ? state.sideMenuReducer.colors[state.sideMenuReducer.activeColor]
-      : '#ffffff'
+      : { hex: '#ffffff', hsl: { h: 0, s: 0, l: 100 } },
+  activeColor: state.sideMenuReducer.activeColor
 });
 
 const mapDispatchToProps = dispatch => ({
   toggleSideBar: () => dispatch(toggleSideBar),
-  handleColorChange: ({ hex }) => {
-    dispatch(changeColor(hex));
+  handleColorChange: color => {
+    dispatch(changeColor(color));
   }
 });
 

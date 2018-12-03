@@ -1,14 +1,42 @@
 const defaultState = {
   sideBarOpened: true,
   colors: {
-    primary: '#03a9f4',
-    primaryFont: 'white',
-    secondary: '#2196f3',
-    secondaryFont: 'white',
-    mainbg: '#ffffff',
-    mainbgFont: 'black',
-    aditionalbg: '#aaaaaa',
-    aditionalbgFont: 'black'
+    primary: {
+      hex: '#03a9f4',
+      hsl: {
+        h: 199,
+        s: 98,
+        l: 48
+      },
+      font: 'white'
+    },
+    secondary: {
+      hex: '#2196f3',
+      hsl: {
+        h: 207,
+        s: 90,
+        l: 54
+      },
+      font: 'white'
+    },
+    mainbg: {
+      hex: '#ffffff',
+      hsl: {
+        h: 0,
+        s: 0,
+        l: 100
+      },
+      font: 'black'
+    },
+    aditionalbg: {
+      hex: '#aaaaaa',
+      hsl: {
+        h: 0,
+        s: 0,
+        l: 67
+      },
+      font: 'black'
+    }
   },
   activeColor: 'none'
 };
@@ -30,8 +58,15 @@ const sideMenuReducer = (state = defaultState, action) => {
         ...state,
         colors: {
           ...state.colors,
-          [state.activeColor]: action.color,
-          [state.activeColor + 'Font']: getFontColor(action.color)
+          [state.activeColor]: {
+            hex: action.color.hex,
+            hsl: {
+              h: action.color.hsl.h,
+              s: action.color.hsl.s,
+              l: action.color.hsl.l
+            },
+            font: getFontColor(action.color.hex)
+          }
         }
       };
     case 'CHANGE_ACTIVE_COLOR':
