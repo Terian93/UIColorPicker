@@ -56,7 +56,6 @@
     "react-dom": "16.6.0",
     "react-hot-loader": "4.3.11",
     "react-redux": "^5.1.1",
-    "react-swipe-events": "^1.0.3",
     "redux": "^4.0.1"
   },
   "resolutions": {
