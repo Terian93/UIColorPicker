@@ -31,7 +31,12 @@
     &__main {
       height: calc(100% - 40px);
       background-color: white;
-      overflow: hidden;
+      overflow-y: scroll !important;
+
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
     }
 
     &__footer {
@@ -40,7 +45,7 @@
   }
 }
 
-@media screen and (max-width: 824px) {
+@media screen and (max-width: 766px), screen and (max-height: 766px) {
   .first-template,
   .second-template,
   .third-template {
@@ -54,16 +59,6 @@
       margin-left: 40px !important;
       height: 30px !important;
       line-height: 30px !important;
-    }
-
-    &__main {
-      //height: calc(100% - 95px) !important;
-      overflow-y: scroll !important;
-
-      ::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
     }
 
     &__main-space {

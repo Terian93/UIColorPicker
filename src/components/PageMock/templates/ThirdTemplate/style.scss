@@ -56,7 +56,7 @@
   }
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 980px), screen and (max-height: 980px) {
   .third-template {
     &__main-space {
       grid-template-columns: repeat(auto-fit, minmax(0, 100%));
