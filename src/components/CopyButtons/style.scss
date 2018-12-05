@@ -1,5 +1,6 @@
 .copy-buttons {
   display: block;
+  margin-bottom: 10px;
 
   &__header {
     text-align: center;
@@ -34,7 +35,7 @@
 
     &__header {
       position: absolute;
-      top: 32px;
+      top: 42px;
       left: calc(50% - 100px);
       width: 200px;
       margin: 0;

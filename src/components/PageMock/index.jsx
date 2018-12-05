@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import FirstTemplate from './templates/FirstTemplate';
 import SecondTemplate from './templates/SecondTemplate';
 import ThirdTemplate from './templates/ThirdTemplate';
@@ -13,16 +13,18 @@ const PageMock = ({ colors }) => {
       <Switch>
         <Route
           exact
+          path="/"
+          render={() => <Redirect to="/first-template" />}
+        />
+        <Route
           path="/first-template"
           component={props => <FirstTemplate {...props} colors={colors} />}
         />
         <Route
-          exact
           path="/second-template"
           component={props => <SecondTemplate {...props} colors={colors} />}
         />
         <Route
-          exact
           path="/third-template"
           component={props => <ThirdTemplate {...props} colors={colors} />}
         />
