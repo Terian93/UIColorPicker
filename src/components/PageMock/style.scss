@@ -11,15 +11,21 @@
     height: 100%;
 
     &__header {
-      height: 30px;
+      display: block;
+      height: 40px;
       width: 100%;
+      overflow: hidden;
     }
 
     &__title {
+      height: 40px;
       width: fit-content;
       padding: 0 5px;
       margin: 0 0 0 10px;
-      line-height: 30px;
+      line-height: 40px;
+      font-family: 'Lobster', cursive;
+      font-size: 16px;
+      letter-spacing: 2px;
     }
 
     &__main {
@@ -38,12 +44,34 @@
   .first-template,
   .second-template,
   .third-template {
+    &__header {
+      display: block;
+      height: 30px !important;
+    }
+
     &__title {
+      display: block !important;
       margin-left: 40px !important;
+      height: 30px !important;
+      line-height: 30px !important;
+    }
+
+    &__main {
+      //height: calc(100% - 95px) !important;
+      overflow-y: scroll !important;
+
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
     }
 
     &__main-space {
       padding: 10px 8px 10px 20px;
+    }
+
+    &__footer {
+      height: 5px;
     }
   }
 }

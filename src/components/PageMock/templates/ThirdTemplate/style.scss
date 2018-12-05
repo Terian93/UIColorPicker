@@ -2,6 +2,7 @@
   &__main-space {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 300px));
+    grid-auto-rows: min-content;
     grid-gap: 10px;
     justify-content: space-around;
     height: 100%;
@@ -32,12 +33,11 @@
       display: block;
       height: 30px;
       width: 100%;
-      //box-shadow: 0 -2px 7px 0 rgba(0, 0, 0, 0.75);
       line-height: 30px;
       white-space: nowrap;
       text-align: center;
       overflow: hidden;
-      transition: width .3s ease, left .3s ease, border-radius .3s ease;
+      transition: width .2s ease, left .2s ease, border-radius .2s ease;
     }
 
     &__post-title:hover {

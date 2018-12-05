@@ -25,7 +25,7 @@ export default class FirstTemplate extends Component {
     return (
       <div className={templateClass}>
         <Header
-          titleText="Toggle side menu"
+          titleText="Toggle menu"
           parentClassName={templateClass}
           color={this.props.colors.primary}
           toogleSideBar={this.handleHeaderClick}

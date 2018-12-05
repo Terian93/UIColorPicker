@@ -35,7 +35,9 @@ class SideMenu extends Component {
     return (
       <section className={containerClassName}>
         <div className="side-menu__container">
-          <h2 className="side-menu__title">UI Color Picker</h2>
+          <h2 className="side-menu__title">
+            <span className="gradient-effect">UI Color Picker</span>
+          </h2>
           <ColorButtons />
           <ColorPicker
             color={this.props.color.hex}

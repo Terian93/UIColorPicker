@@ -5,6 +5,7 @@
   &__header {
     text-align: center;
     margin: 15px 0 5px;
+    user-select: none;
   }
 
   &__buttons-container {
@@ -35,7 +36,7 @@
 
     &__header {
       position: absolute;
-      top: 42px;
+      top: 35px;
       left: calc(50% - 100px);
       width: 200px;
       margin: 0;
@@ -55,35 +56,35 @@
   }
 }
 
-@media screen and (max-width: 824px) and (max-height: 420px) {
+@media screen and (max-width: 824px) and (max-height: 450px) {
   .copy-buttons {
     display: flex;
     flex-direction: row;
     width: 50vw;
-    position: absolute;
-    top: 35px;
-    left: 135px;
 
     &__header {
-      position: relative;
-      left: 0;
+      position: absolute;
+      left: 140px;
       top: 0;
+      width: fit-content;
       margin: 0 10px 0 0;
       text-align: left;
       line-height: 30px;
     }
 
     &__buttons-container {
-      position: relative;
-      top: 0;
+      position: absolute;
+      top: 40px;
+      left: 120px;
       flex-direction: row;
+      justify-content: flex-start;
       height: 30px;
       width: 100px;
       margin: 0;
       text-align: center;
 
       &__hsl-btn {
-        margin-left: 5px;
+        margin-left: 10px;
       }
     }
   }
