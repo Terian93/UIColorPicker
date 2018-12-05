@@ -12,11 +12,6 @@ const PageMock = ({ colors }) => {
     <section className="page-mock-router">
       <Switch>
         <Route
-          exact
-          path="/"
-          render={() => <Redirect to="/first-template" />}
-        />
-        <Route
           path="/first-template"
           component={props => <FirstTemplate {...props} colors={colors} />}
         />
@@ -28,6 +23,7 @@ const PageMock = ({ colors }) => {
           path="/third-template"
           component={props => <ThirdTemplate {...props} colors={colors} />}
         />
+        <Redirect to="/first-template" />
       </Switch>
     </section>
   );
