@@ -41,7 +41,9 @@ const MainSpace = ({
     'third-template'
   ];
   const getArticleModifier = ArticleName => {
-    return ArticleName === activeLink ? ' active' : '';
+    return ArticleName === activeLink
+      ? ' active'
+      : ' ' + ArticleName.split('-')[0];
   };
   const content = linksHiden
     ? numberOfPosts.map(number => (

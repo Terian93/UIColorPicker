@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import FirstTemplate from './templates/FirstTemplate';
 import SecondTemplate from './templates/SecondTemplate';
+import ThirdTemplate from './templates/ThirdTemplate';
 import './style.scss';
 
 const PageMock = ({ colors }) => {
@@ -20,6 +21,11 @@ const PageMock = ({ colors }) => {
           path="/second-template"
           component={props => <SecondTemplate {...props} colors={colors} />}
         />
+        <Route
+          exact
+          path="/third-template"
+          component={props => <ThirdTemplate {...props} colors={colors} />}
+        />
       </Switch>
     </section>
   );
@@ -34,5 +40,3 @@ const mapStateToProps = state => ({
 });
 
 export default withRouter(connect(mapStateToProps)(PageMock));
-/*<Route path='/second-template' component={}/>
-  <Route path='/third-template' component={}/> */
