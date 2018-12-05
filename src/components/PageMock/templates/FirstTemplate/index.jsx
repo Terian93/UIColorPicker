@@ -5,6 +5,8 @@ import SideBar from '../../components/SideBar';
 import MainSpace from '../../components/MainSpace';
 import './style.scss';
 
+const templateClass = 'first-template';
+
 export default class FirstTemplate extends Component {
   constructor (props) {
     super(props);
@@ -21,18 +23,21 @@ export default class FirstTemplate extends Component {
 
   render () {
     return (
-      <div className="page-mock__container">
+      <div className={templateClass}>
         <Header
+          parentClassName={templateClass}
           color={this.props.colors.primary}
           toogleSideBar={this.handleHeaderClick}
         />
-        <main className="page-mock__main">
+        <main className={templateClass + '__main'}>
           <SideBar
+            parentClassName={templateClass}
             sideBarClosed={this.state.sideBarClosed}
             itemColor={this.props.colors.secondary}
             bgColor={this.props.colors.aditionalbg}
           />
           <MainSpace
+            parentClassName={templateClass}
             activeLink="first-template"
             bgColor={this.props.colors.mainbg}
             postBgColor={this.props.colors.aditionalbg}
@@ -41,7 +46,7 @@ export default class FirstTemplate extends Component {
         </main>
         <footer
           style={{ backgroundColor: this.props.colors.primary.hex }}
-          className="page-mock__footer"
+          className={templateClass + '__footer'}
         />
       </div>
     );

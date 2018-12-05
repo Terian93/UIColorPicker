@@ -1,4 +1,8 @@
-.page-mock {
+:root {
+  --color: white;
+}
+
+.first-template {
   &__title {
     -webkit-tap-highlight-color: transparent;
 
@@ -52,7 +56,7 @@
 
     &__nav-item:hover::after,
     &__nav-item.active::after {
-      background-color: white;
+      background-color: var(--color);
     }
   }
 
@@ -71,6 +75,7 @@
       height: 200px;
       flex: 0 1 300px;
       width: auto;
+      box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.75);
     }
   }
 
@@ -80,7 +85,7 @@
 }
 
 @media screen and (max-width: 824px) {
-  .page-mock {
+  .page-mock.first-template {
     &__title {
       margin-left: 40px !important;
     }

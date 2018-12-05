@@ -82,4 +82,9 @@ a:active {
   input:focus {
     background-size: 100% 2px, 100% 1px;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 18px;
+  }
 }

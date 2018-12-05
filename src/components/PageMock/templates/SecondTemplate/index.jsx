@@ -4,6 +4,8 @@ import Header from '../../components/Header';
 import MainSpace from '../../components/MainSpace';
 import './style.scss';
 
+const templateClass = 'second-template';
+
 export default class SecondTemplate extends Component {
   constructor (props) {
     super(props);
@@ -11,10 +13,14 @@ export default class SecondTemplate extends Component {
 
   render () {
     return (
-      <div className="page-mock__container">
-        <Header color={this.props.colors.primary} />
-        <main className="page-mock__main">
+      <div className={templateClass}>
+        <Header
+          parentClassName={templateClass}
+          color={this.props.colors.primary}
+        />
+        <main className={templateClass + '__main'}>
           <MainSpace
+            parentClassName={templateClass}
             linksHiden={false}
             activeLink="second-template"
             bgColor={this.props.colors.mainbg}
@@ -24,7 +30,7 @@ export default class SecondTemplate extends Component {
         </main>
         <footer
           style={{ backgroundColor: this.props.colors.primary.hex }}
-          className="page-mock__footer"
+          className={templateClass + '__footer'}
         />
       </div>
     );

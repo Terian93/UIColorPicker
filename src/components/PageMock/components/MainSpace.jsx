@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const MainSpace = ({
+  parentClassName,
   linksHiden = true,
   activeLink,
   bgColor,
@@ -14,18 +15,20 @@ const MainSpace = ({
       <Link
         to={'/' + articleLink}
         style={{
-          backgroundColor: linkColor
+          backgroundColor: linkColor.hex,
+          color: linkColor.font
         }}
-        className="page-mock__main-space__post-title"
+        className={parentClassName + '__main-space__post-title'}
       >
         {articleLink.split('-').join(' ')}
       </Link>
     ) : (
       <div
         style={{
-          backgroundColor: linkColor
+          backgroundColor: linkColor.hex,
+          color: linkColor.font
         }}
-        className="page-mock__main-space__post-title"
+        className={parentClassName + '__main-space__post-title'}
       >
         {articleLink.split('-').join(' ')}
       </div>
@@ -37,19 +40,26 @@ const MainSpace = ({
     'second-template',
     'third-template'
   ];
+  const getArticleModifier = ArticleName => {
+    return ArticleName === activeLink ? ' active' : '';
+  };
   const content = linksHiden
     ? numberOfPosts.map(number => (
       <article
           key={number}
           style={{ backgroundColor: postBgColor.hex }}
-          className="page-mock__main-space__post-item"
+          className={parentClassName + '__main-space__post-item'}
       />
     ))
     : postsWithLinks.map(linkName => (
       <article
           key={linkName}
           style={{ backgroundColor: postBgColor.hex }}
-          className="page-mock__main-space__post-item"
+          className={
+            parentClassName +
+            '__main-space__post-item' +
+            getArticleModifier(linkName)
+          }
       >
         {articleContent(linkName)}
       </article>
@@ -61,7 +71,7 @@ const MainSpace = ({
         backgroundColor: bgColor.hex,
         color: postBgColor.font
       }}
-      className="page-mock__main-space"
+      className={parentClassName + '__main-space'}
     >
       {content}
     </div>
@@ -69,6 +79,7 @@ const MainSpace = ({
 };
 
 MainSpace.propTypes = {
+  parentClassName: PropTypes.string.isRequired,
   linksHiden: PropTypes.bool,
   activeLink: PropTypes.string.isRequired,
   bgColor: PropTypes.object.isRequired,

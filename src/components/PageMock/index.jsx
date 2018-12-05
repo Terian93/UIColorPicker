@@ -8,7 +8,7 @@ import './style.scss';
 
 const PageMock = ({ colors }) => {
   return (
-    <section className="page-mock">
+    <section className="page-mock-router">
       <Switch>
         <Route
           exact
