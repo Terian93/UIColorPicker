@@ -7,13 +7,17 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack",
     "format": "prettier --write 'packages/**/*.js'",
+    "lint": "eslint ./src",
+    "lint:watch": "esw --watch",
+    "stylelint": "stylelint './src/**/*.css'",
     "test": "jest --watchAll --coverage",
-    "precommit": "lint-staged"
+    "precommit": "npm run lint && npm run stylelint"
   },
+
   "lint-staged": {
     "*.{js,jsx,css,md}": [
-      "prettier --write --single-quote",
       "eslint --fix",
+      "prettier --write --single-quote",
       "git add"
     ]
   },
