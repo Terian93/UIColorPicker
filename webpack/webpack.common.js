@@ -3,6 +3,7 @@ const convert = require('koa-connect');
 const history = require('connect-history-api-fallback');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonPaths = require('./paths');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: commonPaths.entryPath,
@@ -64,6 +65,10 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath
+    }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
     })
   ]
 };
