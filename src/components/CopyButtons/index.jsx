@@ -119,8 +119,8 @@ CopyButtons.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeColor: state.sideMenuReducer.activeColor,
-  colors: state.sideMenuReducer.colors
+  activeColor: state.activeColor,
+  colors: state.colors
 });
 
 export default connect(mapStateToProps)(CopyButtons);

@@ -160,7 +160,7 @@ ColorInput.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeColor: state.sideMenuReducer.activeColor
+  activeColor: state.activeColor
 });
 
 export default connect(mapStateToProps)(ColorInput);

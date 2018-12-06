@@ -70,12 +70,12 @@ SideMenu.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  sideBarOpened: state.sideMenuReducer.sideBarOpened,
+  sideBarOpened: state.sideBarOpened,
   color:
-    state.sideMenuReducer.activeColor !== 'none'
-      ? state.sideMenuReducer.colors[state.sideMenuReducer.activeColor]
+    state.activeColor !== 'none'
+      ? state.colors[state.activeColor]
       : { hex: '#ffffff', hsl: { h: 0, s: 0, l: 100 } },
-  activeColor: state.sideMenuReducer.activeColor
+  activeColor: state.activeColor
 });
 
 const mapDispatchToProps = dispatch => ({

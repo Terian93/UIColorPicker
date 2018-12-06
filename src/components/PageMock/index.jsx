@@ -34,7 +34,7 @@ PageMock.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  colors: state.sideMenuReducer.colors
+  colors: state.colors
 });
 
 export default withRouter(connect(mapStateToProps)(PageMock));

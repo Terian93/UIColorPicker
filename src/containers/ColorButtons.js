@@ -42,8 +42,8 @@ ColorButtons.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  colors: state.sideMenuReducer.colors,
-  activeColorName: state.sideMenuReducer.activeColor
+  colors: state.colors,
+  activeColorName: state.activeColor
 });
 
 const mapDispatchToProps = dispatch => ({
