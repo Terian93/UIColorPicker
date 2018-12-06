@@ -22,7 +22,6 @@ const fontObject = {
   }
 };
 
-//TODO add faiding title onChange
 class CopyButtons extends Component {
   constructor (props) {
     super(props);

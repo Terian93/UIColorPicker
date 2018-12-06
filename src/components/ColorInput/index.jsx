@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './style.scss';
-import { hexToHsl, hslToRgb, shortHexToLong } from './converters';
+import { hexToHsl, hslToHex, shortHexToLong } from './converters';
 
 class ColorInput extends Component {
   constructor (props) {
     super(props);
 
     this.state = {
-      localColor: this.props.color.hex,
-      hslColor: {
+      localHexColor: this.props.color.hex,
+      localHslColor: {
         h: this.props.color.hsl.h.toString(),
         s: this.props.color.hsl.s.toString(),
         l: this.props.color.hsl.l.toString()
@@ -24,8 +24,8 @@ class ColorInput extends Component {
   componentWillReceiveProps (nextProps) {
     if (nextProps.color !== this.state.stateColor) {
       this.setState({
-        localColor: nextProps.color.hex,
-        hslColor: {
+        localHexColor: nextProps.color.hex,
+        localHslColor: {
           h: nextProps.color.hsl.h.toString(),
           s: nextProps.color.hsl.s.toString(),
           l: nextProps.color.hsl.l.toString()
@@ -39,7 +39,7 @@ class ColorInput extends Component {
     const fullHexColorRegEx = /^#?(#{1})([A-F\d]{6})$/;
     const shortHexColorRegEx = /^#?(#{1})([A-F\d]{3})$/;
     this.setState({
-      localColor: event.target.value
+      localHexColor: event.target.value
     });
     if (
       fullHexColorRegEx.test(event.target.value) &&
@@ -65,8 +65,8 @@ class ColorInput extends Component {
   handleHSLChange (event, type) {
     const numberRegEx = /^\d{1,3}$/;
     this.setState({
-      hslColor: {
-        ...this.state.hslColor,
+      localHslColor: {
+        ...this.state.localHslColor,
         [type]: event.target.value
       }
     });
@@ -78,31 +78,31 @@ class ColorInput extends Component {
 
       if (type === 'h' && value >= 0 && value <= 360) {
         this.props.handleColorChange({
-          hex: hslToRgb({ ...this.state.hslColor, h: value }),
+          hex: hslToHex({ ...this.state.localHslColor, h: value }),
           hsl: {
             h: value,
-            s: parseInt(this.state.hslColor.s),
-            l: parseInt(this.state.hslColor.l)
+            s: parseInt(this.state.localHslColor.s),
+            l: parseInt(this.state.localHslColor.l)
           }
         });
       }
       if (value >= 0 && value <= 100) {
         if (type === 's') {
           this.props.handleColorChange({
-            hex: hslToRgb({ ...this.state.hslColor, [type]: value }),
+            hex: hslToHex({ ...this.state.localHslColor, [type]: value }),
             hsl: {
-              h: parseInt(this.state.hslColor.h),
+              h: parseInt(this.state.localHslColor.h),
               s: value,
-              l: parseInt(this.state.hslColor.l)
+              l: parseInt(this.state.localHslColor.l)
             }
           });
         }
         if (type === 'l') {
           this.props.handleColorChange({
-            hex: hslToRgb({ ...this.state.hslColor, [type]: value }),
+            hex: hslToHex({ ...this.state.localHslColor, [type]: value }),
             hsl: {
-              h: parseInt(this.state.hslColor.h),
-              s: parseInt(this.state.hslColor.s),
+              h: parseInt(this.state.localHslColor.h),
+              s: parseInt(this.state.localHslColor.s),
               l: value
             }
           });
@@ -119,7 +119,7 @@ class ColorInput extends Component {
           <div className="color-input__input-box__hex-input">
             <input
               type="text"
-              value={this.state.localColor.toUpperCase()}
+              value={this.state.localHexColor.toUpperCase()}
               onChange={this.handleHexChange}
             />
           </div>
@@ -127,7 +127,7 @@ class ColorInput extends Component {
             <input
               type="text"
               pattern="[0-9]*"
-              value={this.state.hslColor.h}
+              value={this.state.localHslColor.h}
               onChange={event => this.handleHSLChange(event, 'h')}
             />
           </div>
@@ -135,7 +135,7 @@ class ColorInput extends Component {
             <input
               type="text"
               pattern="[0-9]*"
-              value={this.state.hslColor.s}
+              value={this.state.localHslColor.s}
               onChange={event => this.handleHSLChange(event, 's')}
             />
           </div>
@@ -143,7 +143,7 @@ class ColorInput extends Component {
             <input
               type="text"
               pattern="[0-9]*"
-              value={this.state.hslColor.l}
+              value={this.state.localHslColor.l}
               onChange={event => this.handleHSLChange(event, 'l')}
             />
           </div>

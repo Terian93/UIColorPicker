@@ -29,14 +29,10 @@
     }
 
     &__main {
-      height: calc(100% - 40px);
+      height: calc(100% - 50px);
       background-color: white;
-      overflow-y: scroll !important;
-
-      ::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
+      overflow-x: hidden;
+      overflow-y: auto !important;
     }
 
     &__footer {
@@ -61,12 +57,16 @@
       line-height: 30px !important;
     }
 
+    &__main {
+      height: calc(100% - 35px) !important;
+    }
+
     &__main-space {
       padding: 10px 8px 10px 20px;
     }
 
     &__footer {
-      height: 5px;
+      height: 5px !important;
     }
   }
 }

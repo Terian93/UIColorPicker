@@ -39,7 +39,7 @@ export const hexToHsl = hex => {
   return { h, s, l };
 };
 
-export const hslToRgb = ({ h, s, l }) => {
+export const hslToHex = ({ h, s, l }) => {
   h /= 360;
   s /= 100;
   l /= 100;

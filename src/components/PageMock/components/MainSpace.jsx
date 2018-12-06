@@ -51,7 +51,17 @@ const MainSpace = ({
           key={number}
           style={{ backgroundColor: postBgColor.hex }}
           className={parentClassName + '__main-space__post-item'}
-      />
+      >
+        <div
+            style={{
+              backgroundColor: linkColor.hex,
+              color: linkColor.font
+            }}
+            className={parentClassName + '__main-space__post-title'}
+        >
+            Product name
+        </div>
+      </article>
     ))
     : postsWithLinks.map(linkName => (
       <article
