@@ -4,6 +4,7 @@ const history = require('connect-history-api-fallback');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonPaths = require('./paths');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: commonPaths.entryPath,
@@ -68,7 +69,14 @@ module.exports = {
     }),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
-      skipWaiting: true
-    })
+      skipWaiting: true,
+      navigateFallback: '/'
+    }),
+    new CopyWebpackPlugin ([
+      { 
+        from: './src/assets/img/favicon.ico',
+        to: './'
+      },
+    ])
   ]
 };

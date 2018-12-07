@@ -20,7 +20,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              //sourceMap: true,
+              sourceMap: true,
               modules: false,
               camelCase: true,
               localIdentName: '[local]___[hash:base64:5]'

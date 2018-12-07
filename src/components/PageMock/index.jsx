@@ -30,7 +30,8 @@ const PageMock = ({ colors }) => {
 };
 
 PageMock.propTypes = {
-  colors: PropTypes.object.isRequired
+  colors: PropTypes.object.isRequired,
+  history: PropTypes.object
 };
 
 const mapStateToProps = state => ({

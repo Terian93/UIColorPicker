@@ -18,6 +18,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
