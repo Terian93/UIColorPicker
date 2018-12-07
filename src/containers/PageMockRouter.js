@@ -4,7 +4,9 @@ import PageMock from '../components/PageMock';
 
 const PageMockRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      basename = '/UIColorPicker'
+    >
       <PageMock />
     </BrowserRouter>
   );
