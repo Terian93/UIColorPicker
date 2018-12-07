@@ -70,7 +70,7 @@ module.exports = {
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
-      navigateFallback: '/'
+      navigateFallback: 'index.html'
     }),
     new CopyWebpackPlugin ([
       { 
