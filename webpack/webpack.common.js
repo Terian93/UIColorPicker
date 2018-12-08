@@ -73,10 +73,10 @@ module.exports = {
       navigateFallback: 'index.html'
     }),
     new CopyWebpackPlugin ([
-      { 
+      {
         from: './src/assets/img/favicon.ico',
         to: './'
-      },
+      }
     ])
   ]
 };

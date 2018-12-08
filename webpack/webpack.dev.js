@@ -34,5 +34,10 @@ module.exports = {
     compress: true,
     hot: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': `"${''}"`
+    })
+  ]
 };
