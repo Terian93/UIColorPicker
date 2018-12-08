@@ -72,7 +72,7 @@ module.exports = {
       skipWaiting: true,
       navigateFallback: 'index.html',
       modifyUrlPrefix: {
-        '/': '/UIColorPIcker/'
+        '/UIColorPicker/': '/UIColorPicker/'
       },
     }),
     new CopyWebpackPlugin ([
