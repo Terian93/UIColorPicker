@@ -83,7 +83,11 @@ module.exports = {
       {
         from: './src/assets/img/favicon.png',
         to: './images'
-      }
+      },
+      {
+        from: './src/404.html',
+        to: './404.html'
+      },
     ])
   ]
 };
