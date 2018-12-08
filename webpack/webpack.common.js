@@ -70,7 +70,10 @@ module.exports = {
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
-      navigateFallback: 'index.html'
+      navigateFallback: 'index.html',
+      modifyUrlPrefix: {
+        '/': '/UIColorPIcker/'
+      },
     }),
     new CopyWebpackPlugin ([
       {
