@@ -1,13 +1,13 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
-import SideMenu from './components/SideMenu/';
-import PageMockRouter from './containers/PageMockRouter';
+import SideMenu from './modules/SideMenu';
+import PageMock from './modules/PageMock';
 
 const App = () => (
   <div className="container">
     <SideMenu />
-    <PageMockRouter />
+    <PageMock />
   </div>
 );
 

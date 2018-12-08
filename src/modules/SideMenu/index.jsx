@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleSideBar, changeColor } from '../../actions';
-import ColorButtons from '../../containers/ColorButtons';
+
+import ColorButtons from './containers/ColorButtons';
+import ColorPicker from './components/ColorPicker';
+import ColorInput from './components/ColorInput';
+import CopyButtons from './components/CopyButtons';
 import './style.scss';
-import ColorPicker from '../ColorPicker';
-import ColorInput from '../ColorInput';
-import CopyButtons from '../CopyButtons';
 
 function preventDefault (e) {
   e = e || window.event;

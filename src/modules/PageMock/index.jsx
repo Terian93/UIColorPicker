@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import PageMock from '../components/PageMock';
+import PageMockRoures from './Routes';
+import './style.scss';
 
-const PageMockRouter = () => {
+const PageMock = () => {
   return (
     <BrowserRouter
       basename = {process.env.PUBLIC_URL}
     >
-      <PageMock />
+      <PageMockRoures />
     </BrowserRouter>
   );
 };
 
-export default PageMockRouter;
+export default PageMock;

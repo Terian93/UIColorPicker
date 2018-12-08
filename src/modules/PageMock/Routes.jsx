@@ -5,9 +5,8 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import FirstTemplate from './templates/FirstTemplate';
 import SecondTemplate from './templates/SecondTemplate';
 import ThirdTemplate from './templates/ThirdTemplate';
-import './style.scss';
 
-const PageMock = ({ colors }) => {
+const PageMockRoutes = ({ colors }) => {
   return (
     <section className="page-mock-router">
       <Switch>
@@ -29,7 +28,7 @@ const PageMock = ({ colors }) => {
   );
 };
 
-PageMock.propTypes = {
+PageMockRoutes.propTypes = {
   colors: PropTypes.object.isRequired,
   history: PropTypes.object
 };
@@ -38,4 +37,4 @@ const mapStateToProps = state => ({
   colors: state.colors
 });
 
-export default withRouter(connect(mapStateToProps)(PageMock));
+export default withRouter(connect(mapStateToProps)(PageMockRoutes));
