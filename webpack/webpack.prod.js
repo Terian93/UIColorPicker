@@ -41,7 +41,6 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new BundleAnalyzerPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.PUBLIC_URL': `"${'/UIColorPicker'}"`
     })

@@ -1,13 +1,13 @@
 self.__precacheManifest = [
   {
-    "url": "/UIColorPickerjs/main.737cc65604cd8a15241a.js"
+    "url": "/UIColorPickerjs/main.ab72a68e9abe69c77045.js"
   },
   {
-    "revision": "34322a40f37fe153442441e1b39eecda",
+    "revision": "faf41573f355055b469b8fb92ce8d6dd",
     "url": "/UIColorPickerindex.html"
   },
   {
-    "revision": "5d7bf07a3fecb1bdfa8b",
+    "revision": "3296f92e5a31836b1ceb",
     "url": "/UIColorPickercss/main.css"
   },
   {
