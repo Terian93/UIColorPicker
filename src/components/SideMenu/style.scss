@@ -57,11 +57,11 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: AnimationName 14s ease infinite;
+    animation: AnimationName 18s linear infinite;
 
     @keyframes AnimationName {
       0% { background-position: 0% 50% }
-      50% { background-position: 100% 51% }
+      50% { background-position: 100% 50% }
       100% { background-position: 0% 50% }
     }
   }
@@ -111,7 +111,7 @@
   }
 }
 
-@media screen and (max-width: 766px), screen and (max-height: 766px) {
+@media screen and (max-width: 824px) and (max-height: 824px) {
   .side-menu {
     height: 100%;
     width: 100%;
@@ -135,12 +135,12 @@
       height: 30px;
       width: 200px;
       border-radius: 0 0 0 25px;
-      padding: 0 0 0 20px !important;
     }
 
     .gradient-effect {
       text-align: left;
       line-height: 30px;
+      padding: 0 0 0 20px !important;
     }
 
     &__colors-container {
