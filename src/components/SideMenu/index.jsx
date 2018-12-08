@@ -8,6 +8,17 @@ import ColorPicker from '../ColorPicker';
 import ColorInput from '../ColorInput';
 import CopyButtons from '../CopyButtons';
 
+function preventDefault (e) {
+  e = e || window.event;
+  if (e.preventDefault)
+    e.preventDefault();
+  e.returnValue = false;
+}
+
+function disableScroll () {
+  window.ontouchmove  = preventDefault;
+}
+
 class SideMenu extends Component {
   constructor (props) {
     super(props);
@@ -15,6 +26,7 @@ class SideMenu extends Component {
   }
 
   handleColorPickerChange (color) {
+    disableScroll();
     if (this.props.activeColor !== 'none') {
       const result = {
         hex: color.hex,
@@ -26,6 +38,7 @@ class SideMenu extends Component {
       };
       this.props.handleColorChange(result);
     }
+    //enableScroll();
   }
 
   render () {
