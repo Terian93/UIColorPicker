@@ -7,13 +7,16 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack",
     "format": "prettier --write 'packages/**/*.js'",
+    "lint": "eslint ./src",
+    "lint:watch": "esw --watch",
+    "stylelint": "stylelint './src/**/*.css'",
     "test": "jest --watchAll --coverage",
-    "precommit": "lint-staged"
+    "precommit": "npm run lint && npm run stylelint"
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
-      "prettier --write --single-quote",
       "eslint --fix",
+      "prettier --write --single-quote",
       "git add"
     ]
   },
@@ -49,13 +52,13 @@
     "npm": ">=3"
   },
   "dependencies": {
-    "lodash": "4.17.11",
     "prop-types": "15.6.2",
     "react": "16.6.0",
+    "react-color": "^2.14.1",
     "react-dom": "16.6.0",
     "react-hot-loader": "4.3.11",
     "react-redux": "^5.1.1",
-    "react-swipe-events": "^1.0.3",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.1"
   },
   "resolutions": {
@@ -86,6 +89,7 @@
     "browserslist": "4.3.4",
     "clean-webpack-plugin": "0.1.19",
     "connect-history-api-fallback": "^1.5.0",
+    "copy-webpack-plugin": "^4.6.0",
     "cross-env": "5.2.0",
     "css-loader": "1.0.0",
     "enzyme": "3.7.0",
@@ -123,10 +127,12 @@
     "style-loader": "0.23.1",
     "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.4.0",
     "webpack": "4.23.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.10",
-    "webpack-merge": "4.1.4"
+    "webpack-merge": "4.1.4",
+    "workbox-webpack-plugin": "^3.6.3"
   }
 }

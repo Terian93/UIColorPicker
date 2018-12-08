@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['stylelint-config-standard'],
-  plugins: [],
+  plugins: ['stylelint-scss'],
   rules: {
     indentation: 2,
     'number-leading-zero': null,
@@ -11,6 +11,14 @@ module.exports = {
       }
     ],
     'selector-max-id': 0,
-    'selector-class-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+    'selector-class-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9_]+)*$',
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['function', 'if', 'each', 'include', 'mixin']
+      }
+    ],
+    'scss/at-rule-no-unknown': true,
+    'declaration-block-trailing-semicolon': null
   }
 };

@@ -1,0 +1,90 @@
+.color-input {
+  display: block;
+
+  &__input-header {
+    margin: 15px 0 5px;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__input-box {
+    width: fit-content;
+    margin: 0 auto;
+
+    &__hex-input {
+      width: 100%;
+
+      &::before {
+        content: 'HEX';
+        display: inline-block;
+        width: 40%;
+      }
+
+      input {
+        width: 60%;
+        text-align: end;
+      }
+    }
+
+    &__hue-input {
+      width: 100%;
+
+      &::before {
+        content: 'H';
+        display: inline-block;
+        width: 40%;
+      }
+
+      input {
+        width: 60%;
+        text-align: end;
+      }
+    }
+
+    &__saturation-input {
+      width: 100%;
+
+      &::before {
+        content: 'S';
+        display: inline-block;
+        width: 40%;
+      }
+
+      input {
+        width: 60%;
+        text-align: end;
+      }
+    }
+
+    &__lightness-input {
+      width: 100%;
+
+      &::before {
+        content: 'L';
+        display: inline-block;
+        width: 40%;
+      }
+
+      input {
+        width: 60%;
+        text-align: end;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 824px) and (max-height: 824px) {
+  .color-input {
+    width: 100%;
+
+    &__input-header {
+      display: none;
+    }
+
+    &__input-box {
+      * {
+        display: none;
+      }
+    }
+  }
+}

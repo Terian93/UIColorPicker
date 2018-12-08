@@ -1,0 +1,60 @@
+.second-template {
+  &__main-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    flex-grow: 1;
+    padding: 10px 20px;
+    overflow-y: auto;
+
+    &__post-item {
+      position: relative;
+      display: block;
+      flex-shrink: 0;
+      height: 100px;
+      width: calc(100% - 20px);
+      margin: 5px 10px;
+      box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.75);
+    }
+
+    &__post-item.active {
+      height: 300px;
+    }
+
+    &__post-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 30px;
+      width: 130px;
+      border-radius: 0 0 15px 0;
+      box-shadow: inset -2px -2px 7px 0 rgba(0, 0, 0, 0.75);
+      line-height: 30px;
+      white-space: nowrap;
+      text-align: center;
+      overflow: hidden;
+      transition: width .3s ease, height .3s ease;
+    }
+
+    &__post-title:hover {
+      height: 35px;
+      width: 150px;
+    }
+
+    &__post-item.active &__post-title {
+      top: 15px;
+      border-radius: 0 15px 15px 0;
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-width: 824px) {
+  .second-template {
+    &__main-space {
+      padding: 0 !important;
+    }
+  }
+}
