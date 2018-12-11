@@ -85,8 +85,8 @@ module.exports = {
         to: './images'
       },
       {
-        from: './src/_config.yml',
-        to: './_config.yml'
+        from: './src/.gh-pages.yml',
+        to: './.gh-pages.yml'
       },
     ])
   ]
