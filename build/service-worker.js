@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/UIColorPicker/precache-manifest.3e9d0fe08ffde5c069f2856fe680c676.js"
+  "/UIColorPicker/precache-manifest.3f5e7313839ea5f20460835c6fd256c3.js"
 );
 
 workbox.skipWaiting();

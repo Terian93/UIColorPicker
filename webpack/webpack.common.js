@@ -83,11 +83,7 @@ module.exports = {
       {
         from: './src/assets/img/favicon.png',
         to: './images'
-      },
-      {
-        from: './src/.gh-pages.yml',
-        to: './.gh-pages.yml'
-      },
+      }
     ])
   ]
 };
