@@ -4,6 +4,8 @@
   height: 50px;
   width: 50px;
   border: 0.5px solid transparent; }
+  .side-menu__color-button:hover {
+    cursor: pointer; }
   .side-menu__color-button.primary {
     top: 0;
     left: 0;
@@ -58,6 +60,8 @@
     height: 200px;
     width: 200px;
     touch-action: manipulation; }
+    .color-picker__saturation:hover {
+      cursor: crosshair; }
   .color-picker__hue {
     position: relative;
     height: 15px;

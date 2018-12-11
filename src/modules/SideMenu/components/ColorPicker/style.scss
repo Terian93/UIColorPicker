@@ -8,6 +8,10 @@
     height: 200px;
     width: 200px;
     touch-action: manipulation;
+
+    &:hover {
+      cursor: crosshair;
+    }
   }
 
   &__hue {
