@@ -85,8 +85,8 @@ module.exports = {
         to: './images'
       },
       {
-        from: './src/404.html',
-        to: './404.html'
+        from: './src/_config.yml',
+        to: './_config.yml'
       },
     ])
   ]
