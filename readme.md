@@ -16,7 +16,7 @@ App color selection tool
 > > To copy only one color you must to active color that you want to copy, if you want to copy all of them, disable color by clicking on active one
 
 ### Demo :hammer:
-[Github Pages](https://terian93.github.io/UIColorPicker/)
+[FireBase Hosting](https://uicolorpicker.firebaseapp.com)
 
 ### Tech stack :factory:
 - javascript

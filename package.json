@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "UI color picker tool",
   "main": "index.js",
-  "homepage": "https://terian93.github.io/UIColorPicker/",
+  "homepage": "https://uicolorpicker.firebaseapp.com",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack",

@@ -3,7 +3,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const commonPaths = require('./paths');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
-const webpack = require('webpack');
 module.exports = {
   mode: 'production',
   output: {
@@ -40,10 +39,7 @@ module.exports = {
       filename: `${commonPaths.cssFolder}/[name].css`,
       chunkFilename: '[id].css'
     }),
-    new BundleAnalyzerPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': `"${'/UIColorPicker'}"`
-    })
+    new BundleAnalyzerPlugin()
   ],
   devtool: 'source-map'
 };

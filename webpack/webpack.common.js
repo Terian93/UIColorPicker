@@ -71,9 +71,6 @@ module.exports = {
       clientsClaim: true,
       skipWaiting: true,
       navigateFallback: 'index.html',
-      modifyUrlPrefix: {
-        '/UIColorPicker/': '/UIColorPicker/'
-      },
     }),
     new CopyWebpackPlugin ([
       {
@@ -84,6 +81,9 @@ module.exports = {
         from: './src/assets/img/favicon.png',
         to: './images'
       }
-    ])
+    ]),
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': `"${''}"`
+    })
   ]
 };
