@@ -1,14 +1,14 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
-import { BrowserRouter } from 'react-router-dom';
-import Container from './container';
+import React, { Component } from 'react';
+import SideMenu from './modules/SideMenu';
+import PageMock from './modules/PageMock';
 
-const App = () => (
-  <BrowserRouter
-    basename = {process.env.PUBLIC_URL}
-  >
-    <Container/>
-  </BrowserRouter>
-);
-
-export default hot(module)(App);
+export default class Router extends Component {
+  render () {
+    return (
+      <div className="container">
+        <SideMenu />
+        <PageMock />
+      </div>
+    );
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import App from './App.jsx';
+import Router from './Router.jsx';
 import './style.scss';
 
 if ('serviceWorker' in navigator) {
@@ -20,7 +20,7 @@ if ('serviceWorker' in navigator) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router />
   </Provider>,
   document.getElementById('app')
 );
