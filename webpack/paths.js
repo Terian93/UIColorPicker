@@ -6,7 +6,7 @@ module.exports = {
   entryPath: path.resolve(__dirname, '../', 'src/index.jsx'),
   templatePath: path.resolve(__dirname, '../', 'src/template.html'),
   publicPath: '',
-  imagesFolder: 'images',
+  imagesFolder: '/images',
   fontsFolder: 'fonts',
   cssFolder: 'css',
   jsFolder: 'js'
